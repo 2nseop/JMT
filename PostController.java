@@ -22,23 +22,28 @@ public class PostController {
     }
 
     @PostMapping("/api/posts")
-    public Post createMemo(@RequestBody PostRequestDto requestDto) {
+    public Post createPost(@RequestBody PostRequestDto requestDto) {
         return postService.createPost(requestDto);
     }
 
     @GetMapping("/api/posts")
-    public List<Post> getPosts() {
-        return postService.getPosts();
+    public List<Post> getPost() {
+        return postService.getPost();
     }
 
-    @PutMapping("/api/posts/{id}/{password}")
-    public Long updateMemo(@PathVariable Long id, @RequestBody PostRequestDto requestDto, @PathVariable String password) {
+    @PutMapping("/api/posts/{id}")
+    public Long updatePost(@PathVariable Long id, @RequestBody PostRequestDto requestDto) {
         return postService.update(id, requestDto);
     }
 
-    @DeleteMapping("/api/posts/{id}}")
-    public Long deleteMemo(@PathVariable Long id) {
-        return postService.deleteMemo(id);
+    @DeleteMapping("/api/posts/{id}")
+    public Long deletePost(@PathVariable Long id) {
+        return postService.deletePost(id);
+    }
+
+    @PostMapping("/api/joins")
+    public Post joinMember(@RequestBody PostRequestDto requestDto) {
+        return postService.JoinMember(requestDto);
     }
 
 }
