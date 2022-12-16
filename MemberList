@@ -1,0 +1,33 @@
+package com.sparta.project.entity;
+
+
+import com.sparta.project.dto.MemberListRequestDto;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@Entity
+@NoArgsConstructor
+public class MemberList {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(nullable = false)
+    private String username;
+
+    @Column(nullable = false)
+    private String password;
+
+
+    public MemberList(String username, String password) {
+        this.password = password;
+        this.username = username;
+    }
+
+    public MemberList(MemberListRequestDto requestDto) {
+        this.username = getUsername();
+        this.password = getPassword();
+    }
+}
