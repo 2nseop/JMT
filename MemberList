@@ -30,4 +30,5 @@ public class MemberList {
         this.username = getUsername();
         this.password = getPassword();
     }
+    
 }
