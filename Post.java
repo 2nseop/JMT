@@ -33,6 +33,5 @@ public class Post extends Timestamped {
         this.contents = memoRequestDto.getContents();
     }
 
-
 }
 
