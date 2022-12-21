@@ -45,5 +45,4 @@ public class PostController {
     public Post joinMember(@RequestBody PostRequestDto requestDto) {
         return postService.JoinMember(requestDto);
     }
-
 }
